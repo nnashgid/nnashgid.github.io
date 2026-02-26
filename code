@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НАШ ГИД — Нижний Новгород</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Geologica:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+–rust: #C4572A;
+–gold: #D4A843;
+–navy: #1A2744;
+–cream: #F5EFE6;
+–dark: #0F1A2E;
+–mid: #2C3E5A;
+–light-rust: #E8896B;
+–text: #2A2015;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘Geologica’, sans-serif;
+background: var(–cream);
+color: var(–text);
+overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 16px 40px;
+background: rgba(15,26,46,0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(212,168,67,0.2);
+}
+
+.logo {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.6rem;
+font-weight: 900;
+color: var(–cream);
+letter-spacing: -0.02em;
+text-decoration: none;
+}
+.logo span { color: var(–gold); }
+
+.nav-links {
+display: flex;
+gap: 32px;
+list-style: none;
+}
+.nav-links a {
+color: rgba(245,239,230,0.75);
+text-decoration: none;
+font-size: 0.85rem;
+font-weight: 500;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+transition: color 0.2s;
+}
+.nav-links a:hover { color: var(–gold); }
+
+.nav-cta {
+background: var(–rust);
+color: var(–cream) !important;
+padding: 8px 20px;
+border-radius: 40px;
+transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(–light-rust) !important; color: white !important; }
+
+/* HERO */
+.hero {
+min-height: 100vh;
+background: var(–dark);
+position: relative;
+display: flex;
+align-items: flex-end;
+overflow: hidden;
+}
+
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse 80% 60% at 60% 40%, rgba(196,87,42,0.15) 0%, transparent 70%),
+radial-gradient(ellipse 50% 80% at 20% 80%, rgba(212,168,67,0.1) 0%, transparent 60%),
+linear-gradient(160deg, #0F1A2E 0%, #1A2744 50%, #0F1A2E 100%);
+}
+
+/* Animated geometric lines */
+.hero-lines {
+position: absolute;
+inset: 0;
+overflow: hidden;
+}
+.hero-lines::before {
+content: ‘’;
+position: absolute;
+top: -10%;
+right: 5%;
+width: 1px;
+height: 130%;
+background: linear-gradient(to bottom, transparent, rgba(212,168,67,0.3), transparent);
+animation: lineDrift 8s ease-in-out infinite alternate;
+}
+.hero-lines::after {
+content: ‘’;
+position: absolute;
+top: 20%;
+right: 15%;
+width: 1px;
+height: 60%;
+background: linear-gradient(to bottom, transparent, rgba(196,87,42,0.4), transparent);
+animation: lineDrift 12s ease-in-out infinite alternate-reverse;
+}
+@keyframes lineDrift {
+from { transform: translateX(-20px) skewX(-2deg); opacity: 0.5; }
+to { transform: translateX(20px) skewX(2deg); opacity: 1; }
+}
+
+.hero-kremlin {
+position: absolute;
+right: 0;
+bottom: 0;
+width: 55%;
+height: 75%;
+background: url(‘data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="%231A2744" stop-opacity="0.4"/><stop offset="1" stop-color="%230F1A2E" stop-opacity="0.9"/></linearGradient></defs><rect fill="url(%23g)" width="800" height="500"/><g fill="%23253659" opacity="0.8"><!-- Tower 1 --><rect x="80" y="200" width="60" height="300"/><rect x="70" y="185" width="80" height="25"/><rect x="65" y="170" width="90" height="20"/><polygon points="110,120 75,170 145,170" fill="%231e4d7b" opacity="0.6"/><!-- Battlements --><rect x="68" y="160" width="10" height="15"/><rect x="83" y="160" width="10" height="15"/><rect x="98" y="160" width="10" height="15"/><rect x="113" y="160" width="10" height="15"/><rect x="128" y="160" width="10" height="15"/><rect x="143" y="160" width="10" height="15"/><!-- Wall --><rect x="140" y="250" width="200" height="250"/><rect x="140" y="235" width="200" height="20"/><!-- Battlements wall --><rect x="138" y="220" width="14" height="18"/><rect x="158" y="220" width="14" height="18"/><rect x="178" y="220" width="14" height="18"/><rect x="198" y="220" width="14" height="18"/><rect x="218" y="220" width="14" height="18"/><rect x="238" y="220" width="14" height="18"/><rect x="258" y="220" width="14" height="18"/><rect x="278" y="220" width="14" height="18"/><rect x="298" y="220" width="14" height="18"/><rect x="318" y="220" width="14" height="18"/><!-- Tower 2 --><rect x="340" y="160" width="70" height="340"/><rect x="328" y="145" width="94" height="25"/><polygon points="375,90 335,148 415,148" fill="%231e4d7b" opacity="0.6"/><!-- Battlements T2 --><rect x="326" y="130" width="12" height="18"/><rect x="344" y="130" width="12" height="18"/><rect x="362" y="130" width="12" height="18"/><rect x="380" y="130" width="12" height="18"/><rect x="398" y="130" width="12" height="18"/><rect x="416" y="130" width="12" height="18"/><!-- Wall 2 --><rect x="410" y="270" width="200" height="230"/><rect x="410" y="255" width="200" height="20"/><!-- Tower 3 --><rect x="610" y="220" width="55" height="280"/><rect x="600" y="205" width="75" height="22"/><polygon points="637,155 600,208 674,208" fill="%231e4d7b" opacity="0.6"/><!-- Battlements T3 --><rect x="598" y="190" width="11" height="16"/><rect x="614" y="190" width="11" height="16"/><rect x="630" y="190" width="11" height="16"/><rect x="646" y="190" width="11" height="16"/><rect x="662" y="190" width="11" height="16"/></g></svg>’) center/cover no-repeat;
+opacity: 0.6;
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+padding: 0 60px 80px;
+max-width: 620px;
+}
+
+.hero-tag {
+display: inline-block;
+font-size: 0.7rem;
+font-weight: 600;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–gold);
+border: 1px solid rgba(212,168,67,0.4);
+padding: 5px 14px;
+border-radius: 20px;
+margin-bottom: 24px;
+animation: fadeUp 0.8s ease both;
+}
+
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(3rem, 6vw, 5.5rem);
+font-weight: 900;
+color: var(–cream);
+line-height: 1.0;
+letter-spacing: -0.02em;
+margin-bottom: 24px;
+animation: fadeUp 0.8s ease 0.15s both;
+}
+.hero h1 em {
+font-style: italic;
+color: var(–gold);
+}
+
+.hero-desc {
+font-size: 1rem;
+color: rgba(245,239,230,0.65);
+line-height: 1.7;
+max-width: 440px;
+margin-bottom: 40px;
+animation: fadeUp 0.8s ease 0.3s both;
+}
+
+.hero-buttons {
+display: flex;
+gap: 14px;
+flex-wrap: wrap;
+animation: fadeUp 0.8s ease 0.45s both;
+}
+
+.btn-primary {
+background: var(–rust);
+color: white;
+text-decoration: none;
+padding: 14px 32px;
+border-radius: 40px;
+font-weight: 600;
+font-size: 0.9rem;
+letter-spacing: 0.04em;
+transition: all 0.25s;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+.btn-primary:hover {
+background: var(–light-rust);
+transform: translateY(-2px);
+box-shadow: 0 12px 30px rgba(196,87,42,0.35);
+}
+
+.btn-outline {
+background: transparent;
+color: var(–cream);
+text-decoration: none;
+padding: 14px 32px;
+border-radius: 40px;
+font-weight: 500;
+font-size: 0.9rem;
+border: 1px solid rgba(245,239,230,0.25);
+transition: all 0.25s;
+}
+.btn-outline:hover {
+border-color: var(–gold);
+color: var(–gold);
+transform: translateY(-2px);
+}
+
+.hero-stats {
+position: absolute;
+right: 40px;
+bottom: 80px;
+z-index: 3;
+display: flex;
+flex-direction: column;
+gap: 20px;
+animation: fadeUp 0.8s ease 0.6s both;
+}
+
+.stat {
+text-align: right;
+}
+.stat-num {
+font-family: ‘Playfair Display’, serif;
+font-size: 2.2rem;
+font-weight: 900;
+color: var(–cream);
+line-height: 1;
+}
+.stat-num span { color: var(–gold); }
+.stat-label {
+font-size: 0.7rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: rgba(245,239,230,0.45);
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* SEARCH BAR */
+.search-section {
+background: var(–navy);
+padding: 28px 40px;
+}
+.search-bar {
+max-width: 900px;
+margin: 0 auto;
+display: flex;
+gap: 12px;
+align-items: center;
+}
+.search-bar input {
+flex: 1;
+background: rgba(255,255,255,0.07);
+border: 1px solid rgba(255,255,255,0.12);
+color: white;
+padding: 14px 20px;
+border-radius: 10px;
+font-family: inherit;
+font-size: 0.95rem;
+outline: none;
+transition: border-color 0.2s;
+}
+.search-bar input::placeholder { color: rgba(255,255,255,0.35); }
+.search-bar input:focus { border-color: var(–gold); }
+
+.search-bar select {
+background: rgba(255,255,255,0.07);
+border: 1px solid rgba(255,255,255,0.12);
+color: rgba(255,255,255,0.8);
+padding: 14px 16px;
+border-radius: 10px;
+font-family: inherit;
+font-size: 0.85rem;
+outline: none;
+cursor: pointer;
+}
+.search-bar button {
+background: var(–rust);
+color: white;
+border: none;
+padding: 14px 28px;
+border-radius: 10px;
+font-family: inherit;
+font-weight: 600;
+font-size: 0.9rem;
+cursor: pointer;
+transition: background 0.2s;
+white-space: nowrap;
+}
+.search-bar button:hover { background: var(–light-rust); }
+
+/* SECTION HEADERS */
+.section-header {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+margin-bottom: 40px;
+}
+.section-tag {
+font-size: 0.68rem;
+font-weight: 600;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–rust);
+display: block;
+margin-bottom: 8px;
+}
+.section-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(1.8rem, 3vw, 2.8rem);
+font-weight: 900;
+color: var(–navy);
+line-height: 1.1;
+}
+.section-link {
+color: var(–rust);
+text-decoration: none;
+font-size: 0.85rem;
+font-weight: 600;
+letter-spacing: 0.04em;
+display: flex;
+align-items: center;
+gap: 6px;
+transition: gap 0.2s;
+white-space: nowrap;
+margin-bottom: 8px;
+}
+.section-link:hover { gap: 10px; }
+
+/* MAP SECTION */
+.map-section {
+padding: 80px 40px;
+background: var(–cream);
+}
+
+.map-wrapper {
+display: grid;
+grid-template-columns: 1fr 380px;
+gap: 32px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.map-container {
+position: relative;
+border-radius: 20px;
+overflow: hidden;
+background: #e8e4d8;
+min-height: 520px;
+box-shadow: 0 20px 60px rgba(26,39,68,0.12);
+}
+
+.map-placeholder {
+width: 100%;
+height: 100%;
+min-height: 520px;
+background: linear-gradient(135deg, #ddd8cc 0%, #c8c2b4 100%);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+}
+
+/* SVG Map of NN */
+.map-svg {
+width: 100%;
+height: 100%;
+position: absolute;
+inset: 0;
+}
+
+.map-overlay-label {
+position: absolute;
+bottom: 20px;
+left: 20px;
+background: white;
+padding: 12px 18px;
+border-radius: 12px;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+font-size: 0.8rem;
+color: var(–text);
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.map-overlay-label::before {
+content: ‘📍’;
+}
+
+.map-pins {
+position: absolute;
+inset: 0;
+}
+
+.pin {
+position: absolute;
+cursor: pointer;
+}
+.pin-dot {
+width: 14px;
+height: 14px;
+background: var(–rust);
+border: 2px solid white;
+border-radius: 50%;
+box-shadow: 0 2px 8px rgba(196,87,42,0.5);
+transition: transform 0.2s;
+}
+.pin:hover .pin-dot { transform: scale(1.4); }
+.pin-label {
+position: absolute;
+bottom: 18px;
+left: 50%;
+transform: translateX(-50%);
+background: var(–dark);
+color: white;
+padding: 4px 10px;
+border-radius: 6px;
+font-size: 0.7rem;
+white-space: nowrap;
+opacity: 0;
+transition: opacity 0.2s;
+pointer-events: none;
+}
+.pin:hover .pin-label { opacity: 1; }
+
+.map-sidebar {
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+
+.map-filter {
+background: var(–navy);
+border-radius: 16px;
+padding: 20px;
+}
+.map-filter h3 {
+color: var(–gold);
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+margin-bottom: 14px;
+}
+.filter-chips {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+.chip {
+background: rgba(255,255,255,0.08);
+border: 1px solid rgba(255,255,255,0.12);
+color: rgba(245,239,230,0.8);
+padding: 6px 14px;
+border-radius: 20px;
+font-size: 0.75rem;
+cursor: pointer;
+transition: all 0.2s;
+font-family: inherit;
+}
+.chip:hover, .chip.active {
+background: var(–rust);
+border-color: var(–rust);
+color: white;
+}
+
+.map-place-cards {
+flex: 1;
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+gap: 10px;
+max-height: 380px;
+padding-right: 4px;
+}
+.map-place-cards::-webkit-scrollbar { width: 3px; }
+.map-place-cards::-webkit-scrollbar-track { background: transparent; }
+.map-place-cards::-webkit-scrollbar-thumb { background: var(–rust); border-radius: 10px; }
+
+.mini-card {
+background: white;
+border-radius: 14px;
+padding: 14px 16px;
+display: flex;
+gap: 12px;
+cursor: pointer;
+transition: all 0.2s;
+border: 2px solid transparent;
+box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.mini-card:hover {
+border-color: var(–rust);
+transform: translateX(3px);
+}
+.mini-card-img {
+width: 56px;
+height: 56px;
+border-radius: 10px;
+object-fit: cover;
+flex-shrink: 0;
+background: linear-gradient(135deg, #C4572A, #D4A843);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+}
+.mini-card-info h4 {
+font-size: 0.85rem;
+font-weight: 600;
+color: var(–navy);
+margin-bottom: 3px;
+line-height: 1.2;
+}
+.mini-card-info p {
+font-size: 0.72rem;
+color: #888;
+margin-bottom: 4px;
+}
+.mini-card-rating {
+font-size: 0.7rem;
+color: var(–gold);
+font-weight: 600;
+}
+
+/* PLACES GRID */
+.places-section {
+padding: 80px 40px;
+background: #f0ebe0;
+}
+
+.places-grid {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+}
+
+.place-card {
+background: white;
+border-radius: 20px;
+overflow: hidden;
+transition: all 0.3s;
+box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+cursor: pointer;
+}
+.place-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 50px rgba(26,39,68,0.15);
+}
+
+.place-card-img {
+height: 200px;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 4rem;
+}
+.place-card-img.kremlin { background: linear-gradient(135deg, #1A2744, #2C3E5A); }
+.place-card-img.embankment { background: linear-gradient(135deg, #1E4D7B, #2980b9); }
+.place-card-img.market { background: linear-gradient(135deg, #8B4513, #C4572A); }
+.place-card-img.art { background: linear-gradient(135deg, #4A1942, #8B2F7A); }
+.place-card-img.cathedral { background: linear-gradient(135deg, #2D5A27, #4CAF50); }
+.place-card-img.theater { background: linear-gradient(135deg, #7B3F00, #D4A843); }
+
+.place-badge {
+position: absolute;
+top: 14px;
+left: 14px;
+background: rgba(15,26,46,0.8);
+backdrop-filter: blur(6px);
+color: var(–gold);
+font-size: 0.65rem;
+font-weight: 600;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+padding: 4px 10px;
+border-radius: 12px;
+}
+
+.place-card-body {
+padding: 20px 22px 22px;
+}
+.place-card-body h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.15rem;
+font-weight: 700;
+color: var(–navy);
+margin-bottom: 6px;
+line-height: 1.3;
+}
+.place-card-body p {
+font-size: 0.82rem;
+color: #6b6b6b;
+line-height: 1.6;
+margin-bottom: 14px;
+}
+
+.place-meta {
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-size: 0.75rem;
+}
+.place-hours {
+color: #4CAF50;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 4px;
+}
+.place-hours.closed { color: #e53e3e; }
+.place-rating {
+display: flex;
+align-items: center;
+gap: 4px;
+color: var(–gold);
+font-weight: 700;
+}
+
+.place-card-footer {
+padding: 0 22px 18px;
+display: flex;
+gap: 8px;
+}
+.tag {
+background: #f0ebe0;
+color: var(–text);
+font-size: 0.7rem;
+padding: 4px 10px;
+border-radius: 12px;
+font-weight: 500;
+}
+
+/* BIG FEATURED */
+.featured-section {
+padding: 80px 40px;
+background: var(–dark);
+position: relative;
+overflow: hidden;
+}
+.featured-section::before {
+content: ‘’;
+position: absolute;
+top: -100px;
+right: -100px;
+width: 500px;
+height: 500px;
+background: radial-gradient(circle, rgba(196,87,42,0.08) 0%, transparent 70%);
+border-radius: 50%;
+}
+
+.featured-inner {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.featured-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 32px;
+margin-top: 48px;
+}
+
+.featured-card {
+border-radius: 20px;
+overflow: hidden;
+position: relative;
+min-height: 300px;
+display: flex;
+align-items: flex-end;
+cursor: pointer;
+transition: transform 0.3s;
+}
+.featured-card:hover { transform: scale(1.02); }
+.featured-card:first-child { grid-row: span 2; min-height: 640px; }
+
+.featured-bg {
+position: absolute;
+inset: 0;
+}
+.featured-bg-1 {
+background: linear-gradient(135deg, #1A2744 0%, #C4572A 100%);
+}
+.featured-bg-2 { background: linear-gradient(135deg, #2D5A27, #4a7c3f); }
+.featured-bg-3 { background: linear-gradient(135deg, #1E4D7B, #C4572A); }
+
+.featured-overlay {
+position: absolute;
+inset: 0;
+background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+}
+
+.featured-emoji {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -60%);
+font-size: 6rem;
+opacity: 0.15;
+}
+
+.featured-content {
+position: relative;
+z-index: 2;
+padding: 28px;
+width: 100%;
+}
+
+.featured-cat {
+display: inline-block;
+font-size: 0.65rem;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 8px;
+}
+.featured-title {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.4rem;
+color: white;
+font-weight: 700;
+line-height: 1.25;
+margin-bottom: 6px;
+}
+.featured-desc {
+font-size: 0.8rem;
+color: rgba(255,255,255,0.65);
+line-height: 1.5;
+margin-bottom: 16px;
+}
+.featured-link {
+color: white;
+text-decoration: none;
+font-size: 0.78rem;
+font-weight: 600;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+border-bottom: 1px solid rgba(255,255,255,0.3);
+padding-bottom: 2px;
+transition: border-color 0.2s;
+}
+.featured-link:hover { border-color: var(–gold); color: var(–gold); }
+
+/* ROUTES */
+.routes-section {
+padding: 80px 40px;
+background: var(–cream);
+}
+
+.routes-grid {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+}
+
+.route-card {
+background: var(–navy);
+border-radius: 18px;
+padding: 24px;
+cursor: pointer;
+transition: all 0.3s;
+position: relative;
+overflow: hidden;
+}
+.route-card::before {
+content: ‘’;
+position: absolute;
+bottom: -20px;
+right: -20px;
+width: 100px;
+height: 100px;
+background: rgba(255,255,255,0.03);
+border-radius: 50%;
+}
+.route-card:hover { transform: translateY(-6px); background: var(–mid); }
+
+.route-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+.route-card h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.05rem;
+color: var(–cream);
+margin-bottom: 8px;
+line-height: 1.3;
+}
+.route-card p {
+font-size: 0.78rem;
+color: rgba(245,239,230,0.5);
+line-height: 1.5;
+margin-bottom: 16px;
+}
+.route-meta {
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 0.72rem;
+color: var(–gold);
+}
+.route-meta span {
+display: flex;
+align-items: center;
+gap: 4px;
+}
+
+/* EVENTS */
+.events-section {
+padding: 80px 40px;
+background: #f0ebe0;
+}
+
+.events-list {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+
+.event-card {
+background: white;
+border-radius: 18px;
+padding: 24px;
+display: flex;
+gap: 20px;
+cursor: pointer;
+transition: all 0.25s;
+box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.event-card:hover {
+box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+transform: translateY(-3px);
+}
+
+.event-date {
+background: var(–navy);
+border-radius: 14px;
+padding: 14px 16px;
+text-align: center;
+flex-shrink: 0;
+min-width: 64px;
+}
+.event-day {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.8rem;
+font-weight: 900;
+color: var(–gold);
+line-height: 1;
+}
+.event-month {
+font-size: 0.68rem;
+font-weight: 600;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: rgba(245,239,230,0.5);
+margin-top: 2px;
+}
+
+.event-info h4 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+color: var(–navy);
+margin-bottom: 6px;
+line-height: 1.3;
+}
+.event-info p {
+font-size: 0.78rem;
+color: #888;
+line-height: 1.5;
+margin-bottom: 10px;
+}
+.event-tags {
+display: flex;
+gap: 6px;
+flex-wrap: wrap;
+}
+.event-tag {
+background: #f0ebe0;
+color: var(–rust);
+font-size: 0.68rem;
+font-weight: 600;
+padding: 3px 10px;
+border-radius: 10px;
+}
+
+/* CARD RESIDENT */
+.resident-section {
+padding: 80px 40px;
+background: var(–navy);
+}
+
+.resident-inner {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
+}
+
+.resident-text .section-tag { color: var(–gold); }
+.resident-text .section-title { color: var(–cream); }
+.resident-text p {
+font-size: 0.95rem;
+color: rgba(245,239,230,0.6);
+line-height: 1.75;
+margin: 20px 0 32px;
+max-width: 440px;
+}
+
+.resident-benefits {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+margin-top: 32px;
+}
+
+.benefit {
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 14px;
+padding: 18px;
+}
+.benefit-icon { font-size: 1.5rem; margin-bottom: 8px; display: block; }
+.benefit h4 {
+font-size: 0.85rem;
+font-weight: 600;
+color: var(–cream);
+margin-bottom: 4px;
+}
+.benefit p {
+font-size: 0.75rem;
+color: rgba(245,239,230,0.45);
+margin: 0;
+}
+
+.resident-card-visual {
+display: flex;
+justify-content: center;
+}
+
+.card-mockup {
+width: 340px;
+height: 210px;
+border-radius: 20px;
+background: linear-gradient(135deg, #1A2744 0%, #C4572A 60%, #D4A843 100%);
+padding: 24px 28px;
+position: relative;
+box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.1);
+transform: rotate(-4deg);
+transition: transform 0.3s;
+overflow: hidden;
+}
+.card-mockup:hover { transform: rotate(-1deg) scale(1.02); }
+.card-mockup::before {
+content: ‘’;
+position: absolute;
+top: -40px;
+right: -40px;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+background: rgba(255,255,255,0.05);
+}
+
+.card-logo {
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+font-weight: 900;
+color: white;
+letter-spacing: -0.01em;
+}
+.card-logo span { color: var(–gold); }
+
+.card-number {
+font-size: 0.75rem;
+letter-spacing: 0.2em;
+color: rgba(255,255,255,0.5);
+margin-top: 32px;
+font-weight: 500;
+}
+
+.card-holder {
+margin-top: 10px;
+}
+.card-holder-name {
+font-size: 0.85rem;
+font-weight: 600;
+color: white;
+letter-spacing: 0.05em;
+}
+.card-holder-label {
+font-size: 0.65rem;
+color: rgba(255,255,255,0.4);
+text-transform: uppercase;
+letter-spacing: 0.08em;
+margin-bottom: 2px;
+}
+
+.card-chip {
+position: absolute;
+top: 28px;
+right: 28px;
+width: 40px;
+height: 32px;
+background: linear-gradient(135deg, var(–gold), #e8c560);
+border-radius: 5px;
+opacity: 0.8;
+}
+
+/* FOOTER */
+footer {
+background: var(–dark);
+padding: 60px 40px 30px;
+border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-grid {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr;
+gap: 48px;
+margin-bottom: 50px;
+}
+
+.footer-brand h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.6rem;
+font-weight: 900;
+color: var(–cream);
+}
+.footer-brand h2 span { color: var(–gold); }
+.footer-brand p {
+font-size: 0.82rem;
+color: rgba(245,239,230,0.4);
+line-height: 1.7;
+margin-top: 12px;
+max-width: 260px;
+}
+
+.footer-col h4 {
+font-size: 0.7rem;
+font-weight: 600;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 16px;
+}
+.footer-col ul {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.footer-col ul a {
+color: rgba(245,239,230,0.45);
+text-decoration: none;
+font-size: 0.83rem;
+transition: color 0.2s;
+}
+.footer-col ul a:hover { color: var(–cream); }
+
+.footer-bottom {
+max-width: 1200px;
+margin: 0 auto;
+padding-top: 24px;
+border-top: 1px solid rgba(255,255,255,0.07);
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-size: 0.78rem;
+color: rgba(245,239,230,0.25);
+}
+
+/* SCROLL ANIMATIONS */
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+nav { padding: 12px 20px; }
+.nav-links { display: none; }
+.hero-content { padding: 0 24px 60px; }
+.hero-stats { display: none; }
+.hero-kremlin { opacity: 0.3; }
+.map-wrapper { grid-template-columns: 1fr; }
+.places-grid { grid-template-columns: 1fr; }
+.featured-grid { grid-template-columns: 1fr; }
+.featured-card:first-child { min-height: 350px; grid-row: auto; }
+.routes-grid { grid-template-columns: 1fr 1fr; }
+.events-list { grid-template-columns: 1fr; }
+.resident-inner { grid-template-columns: 1fr; }
+.footer-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="logo">НАШ <span>ГИД</span></a>
+  <ul class="nav-links">
+    <li><a href="#places">Места</a></li>
+    <li><a href="#map">Карта</a></li>
+    <li><a href="#routes">Маршруты</a></li>
+    <li><a href="#events">События</a></li>
+    <li><a href="#card">Карта жителя</a></li>
+    <li><a href="#card" class="nav-cta">Получить карту</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-kremlin"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag">Нижний Новгород • Туристический гид</div>
+    <h1>Открой <em>Нижний</em><br>по-новому</h1>
+    <p class="hero-desc">Лучшие места, маршруты и события столицы закатов. Гид для туристов и жителей — с картой, расписаниями и эксклюзивными предложениями.</p>
+    <div class="hero-buttons">
+      <a href="#map" class="btn-primary">🗺 Смотреть карту</a>
+      <a href="#places" class="btn-outline">Все места</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">480<span>+</span></div>
+      <div class="stat-label">Мест на карте</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">32<span>+</span></div>
+      <div class="stat-label">Маршрутов</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">800<span>+</span></div>
+      <div class="stat-label">Лет истории</div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH -->
+
+<div class="search-section">
+  <div class="search-bar">
+    <input type="text" placeholder="Поиск мест, экскурсий, событий...">
+    <select>
+      <option>Все категории</option>
+      <option>Достопримечательности</option>
+      <option>Музеи</option>
+      <option>Рестораны</option>
+      <option>Парки</option>
+      <option>Театры</option>
+    </select>
+    <select>
+      <option>Любое время</option>
+      <option>Открыто сейчас</option>
+      <option>Сегодня</option>
+      <option>На выходных</option>
+    </select>
+    <button>Найти →</button>
+  </div>
+</div>
+
+<!-- MAP SECTION -->
+
+<section class="map-section" id="map">
+  <div class="section-header reveal" style="max-width:1200px; margin: 0 auto 40px;">
+    <div>
+      <span class="section-tag">Интерактивная карта</span>
+      <h2 class="section-title">Нижний на карте</h2>
+    </div>
+    <a href="#" class="section-link">Открыть полную карту →</a>
+  </div>
+
+  <div class="map-wrapper reveal">
+    <div class="map-container">
+      <div class="map-placeholder">
+        <!-- Stylized map background -->
+        <svg class="map-svg" viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background -->
+          <rect width="700" height="520" fill="#ddd8cc"/>
+          <!-- Rivers -->
+          <path d="M0,280 Q100,260 200,280 Q300,300 400,270 Q500,240 700,260" stroke="#a8c4d4" stroke-width="20" fill="none" opacity="0.5"/>
+          <path d="M350,0 Q340,100 360,200 Q370,280 380,380 Q385,440 370,520" stroke="#a8c4d4" stroke-width="14" fill="none" opacity="0.5"/>
+          <!-- Roads -->
+          <path d="M100,200 L600,200" stroke="#c8c2b4" stroke-width="3" fill="none"/>
+          <path d="M100,320 L600,320" stroke="#c8c2b4" stroke-width="3" fill="none"/>
+          <path d="M200,50 L200,470" stroke="#c8c2b4" stroke-width="3" fill="none"/>
+          <path d="M450,50 L450,470" stroke="#c8c2b4" stroke-width="3" fill="none"/>
+          <path d="M50,150 Q200,180 350,160 Q500,140 650,170" stroke="#bbb4a6" stroke-width="2" fill="none"/>
+          <path d="M50,380 Q180,360 300,375 Q430,390 650,370" stroke="#bbb4a6" stroke-width="2" fill="none"/>
+          <!-- Blocks -->
+          <rect x="80" y="110" width="80" height="60" rx="4" fill="#c8c2b4" opacity="0.6"/>
+          <rect x="180" y="110" width="60" height="60" rx="4" fill="#c8c2b4" opacity="0.6"/>
+          <rect x="260" y="100" width="80" height="70" rx="4" fill="#c8c2b4" opacity="0.5"/>
+          <rect x="80" y="230" width="90" height="65" rx="4" fill="#c8c2b4" opacity="0.6"/>
+          <rect x="190" y="240" width="70" height="50" rx="4" fill="#c8c2b4" opacity="0.5"/>
+          <rect x="470" y="120" width="100" height="55" rx="4" fill="#c8c2b4" opacity="0.6"/>
+          <rect x="470" y="240" width="90" height="60" rx="4" fill="#c8c2b4" opacity="0.6"/>
+          <rect x="300" y="340" width="130" height="70" rx="4" fill="#c8c2b4" opacity="0.5"/>
+          <!-- Park / green area -->
+          <ellipse cx="350" cy="420" rx="80" ry="50" fill="#b5c9a0" opacity="0.5"/>
+          <ellipse cx="130" cy="420" rx="60" ry="40" fill="#b5c9a0" opacity="0.4"/>
+          <!-- Labels -->
+          <text x="350" y="290" text-anchor="middle" font-size="8" fill="#7a7060" font-family="sans-serif" opacity="0.8">р. Ока</text>
+          <text x="385" y="140" text-anchor="middle" font-size="8" fill="#7a7060" font-family="sans-serif" opacity="0.8" transform="rotate(80,385,140)">р. Волга</text>
+        </svg>
+
+```
+    <!-- Pins -->
+    <div class="map-pins">
+      <div class="pin" style="left:28%;top:38%">
+        <div class="pin-dot"></div>
+        <div class="pin-label">Нижегородский Кремль</div>
+      </div>
+      <div class="pin" style="left:22%;top:52%">
+        <div class="pin-dot" style="background:#1E4D7B"></div>
+        <div class="pin-label">Набережная Федоровского</div>
+      </div>
+      <div class="pin" style="left:55%;top:32%">
+        <div class="pin-dot" style="background:#D4A843"></div>
+        <div class="pin-label">Большая Покровская</div>
+      </div>
+      <div class="pin" style="left:65%;top:48%">
+        <div class="pin-dot"></div>
+        <div class="pin-label">Нижегородская ярмарка</div>
+      </div>
+      <div class="pin" style="left:40%;top:22%">
+        <div class="pin-dot" style="background:#2D5A27"></div>
+        <div class="pin-label">Парк Швейцария</div>
+      </div>
+      <div class="pin" style="left:48%;top:60%">
+        <div class="pin-dot" style="background:#8B2F7A"></div>
+        <div class="pin-label">Арт-квартал Бурнаковка</div>
+      </div>
+    </div>
+
+    <div class="map-overlay-label">Нижний Новгород • 48 районов</div>
+  </div>
+</div>
+
+<div class="map-sidebar">
+  <div class="map-filter">
+    <h3>Фильтр по категориям</h3>
+    <div class="filter-chips">
+      <button class="chip active">Все</button>
+      <button class="chip">Кремль</button>
+      <button class="chip">Музеи</button>
+      <button class="chip">Набережные</button>
+      <button class="chip">Рестораны</button>
+      <button class="chip">Парки</button>
+      <button class="chip">Театры</button>
+      <button class="chip">Храмы</button>
+    </div>
+  </div>
+
+  <div class="map-place-cards">
+    <div class="mini-card">
+      <div class="mini-card-img">🏰</div>
+      <div class="mini-card-info">
+        <h4>Нижегородский Кремль</h4>
+        <p>Кремлёвская улица</p>
+        <div class="mini-card-rating">★ 4.9 · Достопримечательность</div>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-card-img" style="background:linear-gradient(135deg,#1E4D7B,#2980b9)">🌊</div>
+      <div class="mini-card-info">
+        <h4>Набережная Федоровского</h4>
+        <p>Откос, вид на Стрелку</p>
+        <div class="mini-card-rating">★ 4.8 · Смотровая площадка</div>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-card-img" style="background:linear-gradient(135deg,#8B4513,#C4572A)">🛍</div>
+      <div class="mini-card-info">
+        <h4>Нижегородская ярмарка</h4>
+        <p>Совнаркомовская, 13</p>
+        <div class="mini-card-rating">★ 4.7 · Выставочный центр</div>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-card-img" style="background:linear-gradient(135deg,#4A1942,#8B2F7A)">🎨</div>
+      <div class="mini-card-info">
+        <h4>Нижегородский художественный музей</h4>
+        <p>Кремль, корпус 3</p>
+        <div class="mini-card-rating">★ 4.8 · Музей</div>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-card-img" style="background:linear-gradient(135deg,#2D5A27,#4CAF50)">⛪</div>
+      <div class="mini-card-info">
+        <h4>Собор Александра Невского</h4>
+        <p>Стрелка</p>
+        <div class="mini-card-rating">★ 4.9 · Храм</div>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-card-img" style="background:linear-gradient(135deg,#7B3F00,#D4A843)">🎭</div>
+      <div class="mini-card-info">
+        <h4>Театр драмы им. Горького</h4>
+        <p>Большая Покровская, 13</p>
+        <div class="mini-card-rating">★ 4.8 · Театр</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- PLACES -->
+
+<section class="places-section" id="places">
+  <div class="section-header reveal" style="max-width:1200px; margin: 0 auto 40px;">
+    <div>
+      <span class="section-tag">Лучшие места</span>
+      <h2 class="section-title">Куда пойти в Нижнем</h2>
+    </div>
+    <a href="#" class="section-link">Все места →</a>
+  </div>
+
+  <div class="places-grid">
+    <div class="place-card reveal">
+      <div class="place-card-img kremlin">
+        <span>🏰</span>
+        <div class="place-badge">Обязательно</div>
+      </div>
+      <div class="place-card-body">
+        <h3>Нижегородский Кремль</h3>
+        <p>Средневековая крепость XVI века с 13 башнями, музеями и панорамными видами на Оку и Волгу. Главный символ города.</p>
+        <div class="place-meta">
+          <span class="place-hours">✓ Открыто до 20:00</span>
+          <span class="place-rating">★ 4.9</span>
+        </div>
+      </div>
+      <div class="place-card-footer">
+        <span class="tag">История</span>
+        <span class="tag">Архитектура</span>
+        <span class="tag">Бесплатно</span>
+      </div>
+    </div>
+
+```
+<div class="place-card reveal">
+  <div class="place-card-img embankment">
+    <span>🌅</span>
+    <div class="place-badge">Закаты</div>
+  </div>
+  <div class="place-card-body">
+    <h3>Набережная Федоровского</h3>
+    <p>Лучшее место для закатов в городе. Вид на Стрелку — слияние Оки и Волги. Любимая точка горожан и фотографов.</p>
+    <div class="place-meta">
+      <span class="place-hours">✓ Круглосуточно</span>
+      <span class="place-rating">★ 4.8</span>
+    </div>
+  </div>
+  <div class="place-card-footer">
+    <span class="tag">Природа</span>
+    <span class="tag">Фото</span>
+    <span class="tag">Прогулки</span>
+  </div>
+</div>
+
+<div class="place-card reveal">
+  <div class="place-card-img market">
+    <span>🏛</span>
+    <div class="place-badge">Ярмарка</div>
+  </div>
+  <div class="place-card-body">
+    <h3>Нижегородская ярмарка</h3>
+    <p>Главный торговый центр дореволюционной России. Сегодня — выставочный комплекс с уникальной архитектурой XIX века.</p>
+    <div class="place-meta">
+      <span class="place-hours">✓ Открыто до 18:00</span>
+      <span class="place-rating">★ 4.7</span>
+    </div>
+  </div>
+  <div class="place-card-footer">
+    <span class="tag">История</span>
+    <span class="tag">Выставки</span>
+  </div>
+</div>
+
+<div class="place-card reveal">
+  <div class="place-card-img art">
+    <span>🎨</span>
+    <div class="place-badge">Искусство</div>
+  </div>
+  <div class="place-card-body">
+    <h3>Художественный музей</h3>
+    <p>Один из крупнейших региональных музеев России. Коллекция русской живописи XIV–XX вв. Работы Репина, Айвазовского, Серова.</p>
+    <div class="place-meta">
+      <span class="place-hours">✓ Открыто до 18:00</span>
+      <span class="place-rating">★ 4.8</span>
+    </div>
+  </div>
+  <div class="place-card-footer">
+    <span class="tag">Музей</span>
+    <span class="tag">Живопись</span>
+  </div>
+</div>
+
+<div class="place-card reveal">
+  <div class="place-card-img cathedral">
+    <span>⛪</span>
+    <div class="place-badge">Архитектура</div>
+  </div>
+  <div class="place-card-body">
+    <h3>Собор Александра Невского</h3>
+    <p>Величественный собор на Стрелке с колокольней. Строился на средства купцов в XIX веке. Панорамный вид с обзорной площадки.</p>
+    <div class="place-meta">
+      <span class="place-hours">✓ Открыто до 19:00</span>
+      <span class="place-rating">★ 4.9</span>
+    </div>
+  </div>
+  <div class="place-card-footer">
+    <span class="tag">Храм</span>
+    <span class="tag">История</span>
+    <span class="tag">Стрелка</span>
+  </div>
+</div>
+
+<div class="place-card reveal">
+  <div class="place-card-img theater">
+    <span>🎭</span>
+    <div class="place-badge">Театр</div>
+  </div>
+  <div class="place-card-body">
+    <h3>Театр драмы им. Горького</h3>
+    <p>Старейший театр города. Богатейшая история, роскошный интерьер с уникальной люстрой. Репертуар от классики до современной драматургии.</p>
+    <div class="place-meta">
+      <span class="place-hours closed">Откроется в 19:00</span>
+      <span class="place-rating">★ 4.8</span>
+    </div>
+  </div>
+  <div class="place-card-footer">
+    <span class="tag">Театр</span>
+    <span class="tag">Культура</span>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- FEATURED -->
+
+<section class="featured-section">
+  <div class="featured-inner">
+    <div class="section-header reveal">
+      <div>
+        <span class="section-tag" style="color:var(--gold)">Редакция рекомендует</span>
+        <h2 class="section-title" style="color:var(--cream)">Специальные подборки</h2>
+      </div>
+      <a href="#" class="section-link">Все статьи →</a>
+    </div>
+
+```
+<div class="featured-grid reveal">
+  <div class="featured-card">
+    <div class="featured-bg featured-bg-1"></div>
+    <div class="featured-overlay"></div>
+    <span class="featured-emoji">🌅</span>
+    <div class="featured-content">
+      <span class="featured-cat">Лучшие закаты</span>
+      <h3 class="featured-title">10 мест для идеального заката над Волгой и Окой</h3>
+      <p class="featured-desc">Нижний — столица закатов. Собрали лучшие смотровые площадки с описанием, как добраться и в какое время приходить.</p>
+      <a href="#" class="featured-link">Читать подборку →</a>
+    </div>
+  </div>
+
+  <div class="featured-card">
+    <div class="featured-bg featured-bg-2"></div>
+    <div class="featured-overlay"></div>
+    <span class="featured-emoji">🚶</span>
+    <div class="featured-content">
+      <span class="featured-cat">Пешие маршруты</span>
+      <h3 class="featured-title">Большая Покровская — главная пешеходная улица</h3>
+      <p class="featured-desc">История, здания и скрытые дворы Нижегородского Бродвея.</p>
+      <a href="#" class="featured-link">Читать →</a>
+    </div>
+  </div>
+
+  <div class="featured-card">
+    <div class="featured-bg featured-bg-3"></div>
+    <div class="featured-overlay"></div>
+    <span class="featured-emoji">🏛</span>
+    <div class="featured-content">
+      <span class="featured-cat">Архитектура</span>
+      <h3 class="featured-title">Деревянное кружево: Лучшие особняки в стиле модерн</h3>
+      <p class="featured-desc">Редкая деревянная архитектура XIX–XX века, которую нужно увидеть.</p>
+      <a href="#" class="featured-link">Смотреть →</a>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ROUTES -->
+
+<section class="routes-section" id="routes">
+  <div class="section-header reveal" style="max-width:1200px; margin: 0 auto 40px;">
+    <div>
+      <span class="section-tag">Готовые маршруты</span>
+      <h2 class="section-title">Конструктор маршрутов</h2>
+    </div>
+    <a href="#" class="section-link">Все маршруты →</a>
+  </div>
+
+  <div class="routes-grid">
+    <div class="route-card reveal">
+      <span class="route-icon">🚶‍♂️</span>
+      <h3>Исторический центр за 3 часа</h3>
+      <p>Кремль, Большая Покровская, Рождественская улица и старый базар.</p>
+      <div class="route-meta">
+        <span>⏱ 3 ч</span>
+        <span>📍 12 мест</span>
+      </div>
+    </div>
+    <div class="route-card reveal">
+      <span class="route-icon">🌊</span>
+      <h3>Набережные и Стрелка</h3>
+      <p>Откос, набережная Федоровского, собор на Стрелке, канатная дорога.</p>
+      <div class="route-meta">
+        <span>⏱ 4 ч</span>
+        <span>📍 8 мест</span>
+      </div>
+    </div>
+    <div class="route-card reveal">
+      <span class="route-icon">🎨</span>
+      <h3>Арт-квартал и галереи</h3>
+      <p>Нижегородский Арсенал, Пакгаузы, художественный музей и стрит-арт.</p>
+      <div class="route-meta">
+        <span>⏱ 5 ч</span>
+        <span>📍 9 мест</span>
+      </div>
+    </div>
+    <div class="route-card reveal">
+      <span class="route-icon">🍽</span>
+      <h3>Гастрономический тур</h3>
+      <p>Рынок, лучшие кофейни, традиционные блюда нижегородской кухни.</p>
+      <div class="route-meta">
+        <span>⏱ 6 ч</span>
+        <span>📍 10 мест</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+
+<section class="events-section" id="events">
+  <div class="section-header reveal" style="max-width:1200px; margin: 0 auto 40px;">
+    <div>
+      <span class="section-tag">Афиша</span>
+      <h2 class="section-title">Ближайшие события</h2>
+    </div>
+    <a href="#" class="section-link">Все события →</a>
+  </div>
+
+  <div class="events-list">
+    <div class="event-card reveal">
+      <div class="event-date">
+        <div class="event-day">28</div>
+        <div class="event-month">фев</div>
+      </div>
+      <div class="event-info">
+        <h4>Фестиваль уличного искусства «Нижний в красках»</h4>
+        <p>Живые выступления художников, мастер-классы и создание новых муралов в историческом центре города.</p>
+        <div class="event-tags">
+          <span class="event-tag">Уличное искусство</span>
+          <span class="event-tag">Бесплатно</span>
+        </div>
+      </div>
+    </div>
+
+```
+<div class="event-card reveal">
+  <div class="event-date">
+    <div class="event-day">01</div>
+    <div class="event-month">мар</div>
+  </div>
+  <div class="event-info">
+    <h4>Концерт в Нижегородской филармонии</h4>
+    <p>Симфонический оркестр исполняет произведения Чайковского и Рахманинова. Дирижёр — лауреат премии «Грэмми».</p>
+    <div class="event-tags">
+      <span class="event-tag">Классическая музыка</span>
+      <span class="event-tag">От 500 ₽</span>
+    </div>
+  </div>
+</div>
+
+<div class="event-card reveal">
+  <div class="event-date">
+    <div class="event-day">03</div>
+    <div class="event-month">мар</div>
+  </div>
+  <div class="event-info">
+    <h4>Масленица на Стрелке</h4>
+    <p>Традиционный праздник с народными гуляниями, блинами, играми и сжиганием чучела на набережной.</p>
+    <div class="event-tags">
+      <span class="event-tag">Традиции</span>
+      <span class="event-tag">Семейное</span>
+      <span class="event-tag">Бесплатно</span>
+    </div>
+  </div>
+</div>
+
+<div class="event-card reveal">
+  <div class="event-date">
+    <div class="event-day">07</div>
+    <div class="event-month">мар</div>
+  </div>
+  <div class="event-info">
+    <h4>Выставка «Нижний: 800 лет спустя»</h4>
+    <p>Документальная выставка о трансформации города через века. Редкие фотографии и архивные документы.</p>
+    <div class="event-tags">
+      <span class="event-tag">История</span>
+      <span class="event-tag">Фото</span>
+      <span class="event-tag">Музей</span>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- RESIDENT CARD -->
+
+<section class="resident-section" id="card">
+  <div class="resident-inner">
+    <div class="resident-text reveal">
+      <span class="section-tag">Для жителей Нижнего</span>
+      <h2 class="section-title">Карта жителя Нижегородца</h2>
+      <p>Получите доступ к эксклюзивным скидкам в музеях, ресторанах и культурных учреждениях города. Ваш городской паспорт для жизни в Нижнем Новгороде.</p>
+
+```
+  <a href="#" class="btn-primary" style="display:inline-flex">Оформить карту бесплатно</a>
+
+  <div class="resident-benefits">
+    <div class="benefit">
+      <span class="benefit-icon">🏛</span>
+      <h4>Музеи со скидкой</h4>
+      <p>До -50% в 40+ музеях города</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">🍽</span>
+      <h4>Рестораны</h4>
+      <p>Спецпредложения в партнёрских заведениях</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">🎭</span>
+      <h4>Культура</h4>
+      <p>Льготные билеты в театры и на события</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">🚌</span>
+      <h4>Транспорт</h4>
+      <p>Интеграция с городским транспортом</p>
+    </div>
+  </div>
+</div>
+
+<div class="resident-card-visual reveal">
+  <div class="card-mockup">
+    <div class="card-logo">НАШ <span>ГИД</span></div>
+    <div class="card-chip"></div>
+    <div class="card-number">●●●● ●●●● ●●●● 4792</div>
+    <div class="card-holder">
+      <div class="card-holder-label">Владелец</div>
+      <div class="card-holder-name">ИВАНОВ ИВАН</div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h2>НАШ <span>ГИД</span></h2>
+      <p>Туристический портал Нижнего Новгорода. Всё необходимое для комфортного знакомства с великим городом на Волге.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Навигация</h4>
+      <ul>
+        <li><a href="#">Места</a></li>
+        <li><a href="#">Маршруты</a></li>
+        <li><a href="#">События</a></li>
+        <li><a href="#">Статьи</a></li>
+        <li><a href="#">Экскурсии</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Категории</h4>
+      <ul>
+        <li><a href="#">Музеи</a></li>
+        <li><a href="#">Рестораны</a></li>
+        <li><a href="#">Театры</a></li>
+        <li><a href="#">Парки</a></li>
+        <li><a href="#">Отели</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Контакты</h4>
+      <ul>
+        <li><a href="#">О проекте</a></li>
+        <li><a href="#">Партнёрам</a></li>
+        <li><a href="#">Добавить место</a></li>
+        <li><a href="#">Telegram</a></li>
+        <li><a href="#">ВКонтакте</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 НАШ ГИД. Нижний Новгород</span>
+    <span>Сделано с ❤ для нижегородцев</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Filter chips
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+
+  // Search bar
+  document.querySelector('.search-bar button').addEventListener('click', () => {
+    const val = document.querySelector('.search-bar input').value;
+    if (val) alert('Поиск: ' + val);
+  });
+
+  // Smooth nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    sections.forEach(section => {
+      if (scrollY >= section.offsetTop - 120) {
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          a.style.color = '';
+          if (a.getAttribute('href') === '#' + section.id) {
+            a.style.color = '#D4A843';
+          }
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
